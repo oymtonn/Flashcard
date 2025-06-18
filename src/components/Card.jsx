@@ -1,8 +1,16 @@
+import { useState } from 'react';
 
+const Card = (props) =>{
+    const [side, setSide] = useState(1)
 
-const App = () =>{
+    const updateSide = () =>{
+        setSide(side * -1)
+    }
+
     return(
-        yo
+        <div className="flashcard" onClick={updateSide}>
+            <h1>{side===1 ? props.question : props.answer}</h1>
+        </div>
     )
 }
 
