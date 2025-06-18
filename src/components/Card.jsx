@@ -9,7 +9,7 @@ const Card = (props) =>{
 
     return(
         <div className="flashcard" onClick={updateSide}>
-            <h1>{side===1 ? props.question : props.answer}</h1>
+            <h3>{side===1 ? props.question : props.answer}</h3>
         </div>
     )
 }
