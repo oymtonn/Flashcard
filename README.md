@@ -2,7 +2,7 @@
 
 Submitted by: **Myo Aung**
 
-This web app: **Test your knowledge of city trivia**
+This web app: **Tests your knowledge of city trivia**
 
 Time spent: **4** hours spent in total
 
