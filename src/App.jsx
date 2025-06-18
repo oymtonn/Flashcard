@@ -1,5 +1,4 @@
-// screen record with screenshot. then use quicktime to trim the video. then upload
-// the video into freeconvert. then download and put into repository. then add in readme
+
 
 import './App.css'
 import { useState } from 'react';
