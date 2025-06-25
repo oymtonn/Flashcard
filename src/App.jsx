@@ -3,6 +3,7 @@
 import './App.css'
 import { useState } from 'react';
 import Card from './components/Card'
+import AnswerInput from './components/AnswerInput'
 
 const App = () => {
 
@@ -22,7 +23,15 @@ const App = () => {
     const [index, setIndex] = useState(0)
 
     const getNextCard = () => {
-        setIndex(Math.floor(Math.random() * 10))
+        if (index <= 8){
+            setIndex(index + 1)
+        }
+    }
+
+    const getPreviousCard = () =>{
+        if (index >= 1){
+            setIndex(index - 1)
+        }
     }
 
     return(
@@ -31,9 +40,18 @@ const App = () => {
             <h3>Test your knowledge of cities from around the world!</h3>
             <h4>Number of cards: 10</h4>
             <Card question={cardSet[index].question} answer={cardSet[index].answer}/>
-            <button onClick={getNextCard} className="arrowButton">
-                <img src="./src/assets/right-arrow.png" className="arrowImg"/>
-            </button>
+            <AnswerInput
+                question={cardSet[index].question}
+                answer={cardSet[index].answer}
+            />
+            <div className="button-row">
+                <button onClick={getPreviousCard} className="arrowButton" disabled={index===0}>
+                    <img src="./src/assets/arrow.png" className="arrowImg"/>
+                </button>
+                <button onClick={getNextCard} className="arrowButton" disabled={index===9}>
+                    <img src="./src/assets/right-arrow.png" className="arrowImg"/>
+                </button>
+            </div>
         </div>
     )
 }
